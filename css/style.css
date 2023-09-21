@@ -226,13 +226,13 @@ header  .navbar-nav > li > a {
 }
 
 .services{
-	
+	padding: 5px;
 }
 .dishes{
 	
 background: #de8c63;
 	
-padding: 35px 0;
+padding: 5px 0;
 	
 color: #1b1b1b;
 }
@@ -373,7 +373,6 @@ ul.nav li.dropdown a {
  
 #banner{
 	width: 100%;
-	background:#000;
 	position:relative;
 	margin:0;
 	padding:0;
@@ -382,7 +381,8 @@ ul.nav li.dropdown a {
 /*  Sliders
 ==================================== */
 /* --- flexslider --- */
-#main-slider:before {content: '';width: 100%;height: 100%;background: rgba(0, 0, 0, 0.51);z-index: 1;position: absolute;}
+#main-slider:before {content: '';width: 100%;height: 100%;position: absolute;}
+
 .flex-direction-nav a{
 display:none;
 }

@@ -19,10 +19,7 @@
 <link href="css/style.css" rel="stylesheet" />
 <link href="css/gallery-1.css" rel="stylesheet">
  
-<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-<!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+
 <style>
 	.pdf-overlay {
 		display: none;
@@ -60,32 +57,6 @@
 	}
 </style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<!-- <script type="text/javascript">
-	// Open PDF as an image Zoom
-	$('.gallery-zoom').on('click', function (e) {
-		e.preventDefault();
-		var pdfSrc = $(this).attr('href');
-		var fileType = $(this).attr('data-type');
-
-		// Set the src attribute of the iframe and show the overlay
-		var iframe = $('.pdf-iframe');
-		iframe.attr('src', pdfSrc);
-
-		var overlay = $('.pdf-overlay');
-		overlay.show();
-
-		// Close the overlay when clicking outside of the iframe or on the overlay itself
-		overlay.click(function () {
-			iframe.attr('src', ''); // Clear the src attribute to stop PDF loading
-			overlay.hide();
-		});
-
-		// Prevent the overlay from closing when clicking inside the iframe
-		$('.pdf-container').click(function (e) {
-			e.stopPropagation();
-		});	
-	});	
-</script> -->
 </head>
 <body>
 <div class="pdf-overlay" hidden>
@@ -362,7 +333,7 @@
 			</div>
 		</div>
 	</div>
-	</footer>
+</footer>
 </div>
 <a href="#" class="scrollup waves-effect waves-dark"><i class="fa fa-angle-up active"></i></a>
 <!-- javascript
