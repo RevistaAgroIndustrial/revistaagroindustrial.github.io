@@ -23,9 +23,50 @@
 <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+<style>
+	.pdf-overlay {
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.8);
+		z-index: 1000;
+		cursor: pointer; /* Add a pointer cursor to indicate it's clickable */
+	}
 
+	/* CSS for the container holding the iframe */
+	.pdf-container {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 80%; /* Adjust the width as needed */
+		height: 80%; /* Adjust the height as needed */
+		background: #fff;
+		overflow: auto;
+		z-index: 1001;
+		padding: 10px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+	}
+
+	/* CSS for the embedded PDF */
+	.pdf-iframe {
+		display: block;
+		width: 100%;
+		height: 100%;
+		border: none;
+	}
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
+<div class="pdf-overlay" hidden>
+	<div class="pdf-container">
+		<iframe class="pdf-iframe" src=""></iframe>
+	</div>
+</div>
 <div id="wrapper"> 
 	<!-- start header -->
 		<header>
@@ -104,8 +145,7 @@
                             <div class="gallery-thumb">
                                 <img src="img/works/1sicite.png" class="img-responsive" alt="PERCEPÇÃO DOS USUÁRIOS DO INSTAGRAM EM RELAÇÃO Á FRUTAS NATIVAS BRASILEIRAS">
                                 <div class="image-overlay"></div>
-					<object data = "Pdf/ResumoSicite22.pdf" type="aplication/pdf" width="300" height="200" class="gallery-zoom"><i class="fa fa-eye"></i></object>
-					<!-- <a href="Pdf/ResumoSicite22.pdf"class="gallery-zoom"><i class="fa fa-eye"></i>></a> -->
+								<a href="Pdf/ResumoSicite22.pdf"class="gallery-zoom"><i class="fa fa-eye"></i></a>
                             </div>
                             <div class="gallery-details">
                             	<div class="editContent">
@@ -119,13 +159,13 @@
                         </div>
                     </div>
                     <!-- /.gallery-item-wrapper -->
+					
                     <div class="col-md-4 col-sm-6 col-xs-12 gallery-item-wrapper nature outside">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
                                 <img src="img/works/2wcti.png" class="img-responsive" alt="INFUSÕES DE CHÁ MATE COM ADIÇÃO DE PITANGAS E JABUTICABAS DESIDRATADAS">
-                                <div class="image-overlay"></div>
+                                <!-- <div class="image-overlay"></div> -->
                                 <a href="Pdf/WCTI23.pdf" class="gallery-zoom"><i class="fa fa-eye"></i></a>
-                                
                             </div>
                             <div class="gallery-details">
                             	<div class="editContent">
@@ -144,7 +184,7 @@
                             <div class="gallery-thumb">
                                 <img src="img/works/chagelado.png" class="img-responsive" alt="DESENVOLVIMENTO DE BEBIDA A BASE DE CHÁ MATE GASEIFICADO 
 								COM JABUTICABA">
-                                <div class="image-overlay"></div>
+                                <!-- <div class="image-overlay"></div> -->
                                 <a href="img/works/Poster.png" class="gallery-zoom"><i class="fa fa-eye"></i></a>
                                 
                             </div>
