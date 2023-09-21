@@ -761,8 +761,6 @@ form#commentform textarea {
 
 .about-text .btn {
 	margin-top: 20px;
-	//font-size: 15px;
-	//text-align: justify;
 }
 
 .about-image img {
@@ -775,7 +773,6 @@ form#commentform textarea {
 
 .about-text li {
 	margin-bottom: 10px;
-	//
 	font-weight: bold;
 	list-style: none;
 }
@@ -894,14 +891,64 @@ background: #32c8de;
 .top-wrapper {
 	margin-bottom:20px;
 }
-.info-blocks {margin-bottom: 15px;/* background: #efefef; */}
-.info-blocks i.icon-info-blocks {float: left;color: #bc5f31;font-size: 40px;min-width: 50px;margin-top: 11px;text-align: center;/* background: #f7e2d8; */width: 72px;height: 72px;/* padding-top: 21px; */border: 1px solid #de8c63;line-height: 75px;}
-.info-blocks .info-blocks-in {
-padding: 0 10px;
-overflow: hidden;
+
+/* .info-blocks {margin-bottom: 15px;/* background: #efefef; }
+.info-blocks i.icon-info-blocks {
+	float: left;
+	color: #bc5f31;
+	font-size: 40px;
+	min-width: 50px;
+	text-align: center;
+	width: 72px;
+	height: 72px;
+	line-height: 75px;
 }
-.info-blocks .info-blocks-in h3 {color: #5f2e16;font-size: 20px;line-height: 28px;margin:0px;margin-bottom: 8px;/* font-weight: bold; */}
-.info-blocks .info-blocks-in p {font-size: 14px;}
+
+.info-blocks .info-blocks-in {
+	margin-top: 10px;
+	padding: 0 10px;
+	overflow: hidden;
+}
+.info-blocks .info-blocks-in h3 {color: #5f2e16;font-size: 20px;line-height: 28px;margin:0px;margin-bottom: 8px;}
+.info-blocks .info-blocks-in p {font-size: 14px;} */
+
+.info-blocks {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    /* background: #efefef; */
+}
+
+.info-blocks i.icon-info-blocks {
+    float: left;
+    color: #bc5f31;
+    font-size: 40px;
+    min-width: 50px;
+    text-align: center;
+    width: 200px;
+    height: 200px;
+    /* border: 1px solid #de8c63; */
+    line-height: 75px;
+}
+
+.info-blocks .info-blocks-in {
+    margin-top: 10px;
+    padding: 0 10px;
+    overflow: hidden;
+    flex-grow: 1; /* To make the text block expand to fill the remaining space */
+}
+
+.info-blocks .info-blocks-in h3 {
+    color: #5f2e16;
+    font-size: 20px;
+    line-height: 28px;
+    margin: 0;
+    margin-bottom: 8px;
+}
+
+.info-blocks .info-blocks-in p {
+    font-size: 14px;
+}
   
 blockquote {
 	font-size:16px;
