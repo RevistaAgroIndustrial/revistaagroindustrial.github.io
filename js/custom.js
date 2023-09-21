@@ -147,31 +147,30 @@ jQuery(document).ready(function($) {
 		// 		tError: '',
 		// 		// other options
 		// 	});
-
-	// Open PDF as an image Zoom
-	$('.gallery-zoom').on('click', function (e) {
-		e.preventDefault();
-		var pdfSrc = $(this).attr('href');
-		var fileType = $(this).attr('data-type');
-
-		// Set the src attribute of the iframe and show the overlay
-		var iframe = $('.pdf-iframe');
-		iframe.attr('src', pdfSrc);
-
-		var overlay = $('.pdf-overlay');
-		overlay.show();
-
-		// Close the overlay when clicking outside of the iframe or on the overlay itself
-		overlay.click(function () {
-			iframe.attr('src', ''); // Clear the src attribute to stop PDF loading
-			overlay.hide();
-		});
-
-		// Prevent the overlay from closing when clicking inside the iframe
-		$('.pdf-container').click(function (e) {
-			e.stopPropagation();
-		});	
-	});	
 			 
+		// Open PDF as an image Zoom
+		$('.gallery-zoom').on('click', function (e) {
+			e.preventDefault();
+			var pdfSrc = $(this).attr('href');
+			var fileType = $(this).attr('data-type');
+
+			// Set the src attribute of the iframe and show the overlay
+			var iframe = $('.pdf-iframe');
+			iframe.attr('src', pdfSrc);
+
+			var overlay = $('.pdf-overlay');
+			overlay.show();
+
+			// Close the overlay when clicking outside of the iframe or on the overlay itself
+			overlay.click(function () {
+				iframe.attr('src', ''); // Clear the src attribute to stop PDF loading
+				overlay.hide();
+			});
+
+			// Prevent the overlay from closing when clicking inside the iframe
+			$('.pdf-container').click(function (e) {
+				e.stopPropagation();
+			});	
+		});	
 });
 
