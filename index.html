@@ -13,14 +13,56 @@
 <link href="css/fancybox/jquery.fancybox.css" rel="stylesheet"> 
 <link href="css/flexslider.css" rel="stylesheet" /> 
 <link href="css/style.css" rel="stylesheet" />
+
+<!-- Vendor Styles -->
+<link href="css/magnific-popup.css" rel="stylesheet"> 
+<link href="css/gallery-1.css" rel="stylesheet">
  
-<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-<!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+<style>
+	.pdf-overlay {
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.8);
+		z-index: 1000;
+		cursor: pointer; /* Add a pointer cursor to indicate it's clickable */
+	}
+
+	/* CSS for the container holding the iframe */
+	.pdf-container {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 90%; /* Adjust the width as needed */
+		height: 85%; /* Adjust the height as needed */
+		background: #fff;
+		overflow: auto;
+		z-index: 1001;
+		padding: 10px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+	}
+
+	/* CSS for the embedded PDF */
+	.pdf-iframe {
+		display: block;
+		width: 100%;
+		height: 100%;
+		border: none;
+	}
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>
 <body>
+<div class="pdf-overlay" hidden>
+	<div class="pdf-container">
+		<iframe class="pdf-iframe" src=""></iframe>
+	</div>
+</div>
 <div id="wrapper" class="pagina inicial"> 
 	<!-- start header -->
 	<header>
@@ -44,12 +86,12 @@
                             <li><a class="waves-effect waves-dark" href="#">SBCTA-PR</a></li> 
                         </ul>
                     </li> 
-                        <li><a class="waves-effect waves-dark" href="portfolio.html">Edições</a></li>
+                        <li><a class="waves-effect waves-dark" href="portfolio.html">Artigos</a></li>
                         <li><a class="waves-effect waves-dark" href="pricing.html">Eventos</a></li>
                         <li><a class="waves-effect waves-dark" href="contact.html">Submissão</a></li>
                     </ul>
                 </div>
-            </div>
+            </div>	
         </div>
 	</header>
 	<!-- end header -->
@@ -59,7 +101,7 @@
         <div id="main-slider" class="flexslider">
             <ul class="slides">
               <li>
-                <img src="img/slides/logo2.png" alt="" />
+                <img src="img/slides/3.png" alt="" />
                 <div class="flex-caption">
                     <!--h3>Bem vindo!</h3> 
 					<p>Revista AgroIndústria</p-->
@@ -76,16 +118,89 @@
               </li>
             </ul>
         </div>
-	<end slider> 
+	<!-- <end slider>  -->
 	</section>  
-		<section class="dishes">
+
+	<section class="dishes">
 		<div class="container">
-	 	<div class="row">
+		<div class="row">
 			<div class="col-md-12">
 				<div class="aligncenter"><h2 class="aligncenter">Artigos Destaques</h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt eius magni provident, <br/>doloribus omnis minus ovident, doloribus omnis minus temporibus perferendis nesciunt..</div>
 				<br/>
 			</div>
 		</div>
+		<div class="row service-v1 margin-bottom-40">
+			<div id="isotope-gallery-container">
+				<div class="col-md-4 col-sm-6 col-xs-12 gallery-item-wrapper artwork creative">
+					<div class="gallery-item">
+						<div class="gallery-thumb">
+							<img src="img/works/1sicite.png" class="img-responsive" alt="PERCEPÇÃO DOS USUÁRIOS DO INSTAGRAM EM RELAÇÃO Á FRUTAS NATIVAS BRASILEIRAS">
+							<div class="image-overlay"></div>
+							<a href="Pdf/ResumoSicite22.pdf"class="gallery-zoom"><i class="fa fa-eye"></i></a>
+						</div>
+						<div class="gallery-details">
+							<div class="editContent">
+								<h5>PERCEPÇÃO DOS USUÁRIOS DO INSTAGRAM EM RELAÇÃO Á 
+									FRUTAS NATIVAS BRASILEIRAS</h5>
+							</div>
+							<div class="editContent">
+								<p>Resumo.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /.gallery-item-wrapper -->
+				
+				<div class="col-md-4 col-sm-6 col-xs-12 gallery-item-wrapper nature outside">
+					<div class="gallery-item">
+						<div class="gallery-thumb">
+							<img src="img/works/2wcti.png" class="img-responsive" alt="INFUSÕES DE CHÁ MATE COM ADIÇÃO DE PITANGAS E JABUTICABAS DESIDRATADAS">
+							<!-- <div class="image-overlay"></div> -->
+							<a href="Pdf/WCTI23.pdf" class="gallery-zoom"><i class="fa fa-eye"></i></a>
+						</div>
+						<div class="gallery-details">
+							<div class="editContent">
+								<h5>INFUSÕES DE CHÁ MATE COM ADIÇÃO DE PITANGAS E 
+									JABUTICABAS DESIDRATADAS</h5>
+							</div>
+							<div class="editContent">
+								<p>Resumo.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /.gallery-item-wrapper -->
+				<div class="col-md-4 col-sm-6 col-xs-12 gallery-item-wrapper photography artwork">
+					<div class="gallery-item">
+						<div class="gallery-thumb">
+							<img src="img/works/chagelado.png" class="img-responsive" alt="DESENVOLVIMENTO DE BEBIDA A BASE DE CHÁ MATE GASEIFICADO 
+							COM JABUTICABA">
+							<!-- <div class="image-overlay"></div> -->
+							<a href="img/works/Poster.png" class="gallery-zoom"><i class="fa fa-eye"></i></a>
+							
+						</div>
+						<div class="gallery-details">
+							<div class="editContent">
+								<h5>DESENVOLVIMENTO DE BEBIDA A BASE DE CHÁ MATE GASEIFICADO 
+									COM JABUTICABA</h5>
+							</div>
+							<div class="editContent">
+								<p>Resumo.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- <section class="dishes">
+	<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="aligncenter"><h2 class="aligncenter">Artigos Destaques</h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt eius magni provident, <br/>doloribus omnis minus ovident, doloribus omnis minus temporibus perferendis nesciunt..</div>
+			<br/>
+		</div>
+	</div>
 	
 	<div class="row service-v1 margin-bottom-40">
             <div class="col-md-4 md-margin-bottom-40">
@@ -138,67 +253,66 @@
             </div> 
         </div>
 		</div>
-		</section>
+		</section> -->
 	<section id="content"> 
-	<div class="container">
-	
-		<section class="services">
-	    	<div class="row">
-			<div class="col-md-12">
-				<div class="aligncenter"><h2 class="aligncenter">Apoiadores</h2>
+		<div class="container">
+			<section class="services">
+				<div class="row">
+				<div class="col-md-12">
+					<div class="aligncenter"><h2 class="aligncenter">Apoiadores</h2>
+					</div>
+					<br>
 				</div>
-				<br/>
 			</div>
+	
+		 <div class="row" style="margin-bottom: -10%">
+				<div class="col-sm-4 info-blocks"> 
+					<i class="icon-info-blocks material-icons"><img class="img-responsive" src="img/sbcta1.png" alt=""></i>
+					<div class="info-blocks-in">
+						<!-- <h3>SBCTA-PR</h3> -->
+						<!--p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt</p-->
+					</div>
+				</div>
+				<div class="col-sm-4 info-blocks">
+					<i class="icon-info-blocks material-icons"><img class="img-responsive" src="img/utfpr.png" alt="" style="vertical-align: middle; margin-top: 40px"></i>
+					<div class="info-blocks-in">
+						<!-- <h3>UTFPR</h3> -->
+						<!--p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt</p-->
+					</div>
+				</div>
+				<div class="col-sm-4 info-blocks">
+					<i class="icon-info-blocks material-icons" style="vertical-align: middle;"><img class="img-responsive" src="img/conagron.png" alt="" style="margin-top: 20px"></i>
+					<div class="info-blocks-in" style="vertical-align: middle;">
+						<!-- <h3>CONAGRON</h3> -->
+						<!--p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt</p-->
+					</div>
+				</div>
+			</div>
+			<div class="row" style="margin-top: -5%">
+				<div class="col-sm-4 info-blocks">
+					<i class="icon-info-blocks material-icons"><img class="img-responsive" src="img/IFPR.png" alt=""></i>
+					<div class="info-blocks-in">
+						<!-- <h3>IFPR</h3> -->
+						<!--p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt</p-->
+					</div>
+				</div>
+				<div class="col-sm-4 info-blocks">
+					<i class="icon-info-blocks material-icons"><img class="img-responsive" src="img/UFPR.png" alt=""></i>
+					<div class="info-blocks-in">
+						<!-- <h3>UFPR</h3> -->
+						<!--p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt</p>
+					</div>
+				</div>
+				<div class="col-sm-4 info-blocks">
+					<i class="icon-info-blocks material-icons">tab_unselected</i>
+					<div class="info-blocks-in">
+						<h3>Eventos</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt</p-->
+					</div>
+				</div>
+			</div>
+			</section>
 		</div>
-
-	 <div class="row">
-            <div class="col-sm-4 info-blocks"> 
-				<i class="icon-info-blocks material-icons"><img class="img-responsive" src="img/sbcta1.png" alt=""></i>
-                <div class="info-blocks-in">
-                    <h3>SBCTA-PR</h3>
-                    <!--p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt</p-->
-                </div>
-            </div>
-            <div class="col-sm-4 info-blocks">
-                <i class="icon-info-blocks material-icons"><img class="img-responsive" src="img/utfpr.png" alt=""></i>
-                <div class="info-blocks-in">
-                    <h3>UTFPR</h3>
-                    <!--p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt</p-->
-                </div>
-            </div>
-            <div class="col-sm-4 info-blocks">
-                <i class="icon-info-blocks material-icons"><img class="img-responsive" src="img/conagron.png" alt=""></i>
-                <div class="info-blocks-in">
-                    <h3>CONAGRON</h3>
-                    <!--p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt</p-->
-                </div>
-            </div>
-        </div>
-<div class="row">
-            <div class="col-sm-4 info-blocks">
-                <i class="icon-info-blocks material-icons"><img class="img-responsive" src="img/IFPR.png" alt=""></i>
-                <div class="info-blocks-in">
-                    <h3>IFPR</h3>
-                    <!--p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt</p-->
-                </div>
-            </div>
-            <div class="col-sm-4 info-blocks">
-                <i class="icon-info-blocks material-icons"><img class="img-responsive" src="img/UFPR.png" alt=""></i>
-                <div class="info-blocks-in">
-                    <h3>UFPR</h3>
-                    <!--p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt</p>
-                </div>
-            </div>
-            <div class="col-sm-4 info-blocks">
-                <i class="icon-info-blocks material-icons">tab_unselected</i>
-                <div class="info-blocks-in">
-                    <h3>Eventos</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt</p-->
-                </div>
-            </div>
-        </div>
-		</section>
-	</div>
 	</section>
 	
 	<!--section class="section-padding gray-bg">
@@ -236,77 +350,78 @@
 	
  
 	<footer>
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-3 col-lg-3">
-				<div class="widget">
-					<h5 class="widgetheading">Contato</h5>
-					<address>
-					<strong>Sociedade Brasileira de Ciência e Tecnologia de Alimentos SBCTA-PR</strong><br>
-					<!--JC Main Road, Near Silnile tower<br-->
-					 Curitiba-PR, Brasil</address>
-					<p>
-						<!--i class="icon-phone"></i> (123) 456-789 - 1255-12584 <br-->
-						<i class="icon-envelope-alt"></i> revistaagroindustrial@gmail.com
-					</p>
-				</div>
-			</div>
-			<div class="col-sm-3 col-lg-3">
-				<div class="widget">
-					<h5 class="widgetheading">Links</h5>
-					<ul class="link-list">
-						<li><a class="waves-effect waves-dark" href="https://revistaagroindustrial.github.io/agroindustrial.github.io/pricing.html">Próximos eventos</a></li>
-						<li><a class="waves-effect waves-dark" href="#">Termos e condições</a></li>
-						<li><a class="waves-effect waves-dark" href="#">Política e Privacidade</a></li>
-						<li><a class="waves-effect waves-dark" href="https://sbcta-pr.org.br/">SBCTA-PR</a></li>
-						<!--li><a class="waves-effect waves-dark" href="#">Contact us</a></li-->
-					</ul>
-				</div>
-			</div>
-			<!--div class="col-sm-3 col-lg-3">
-				<div class="widget">
-					<h5 class="widgetheading">Latest posts</h5>
-					<ul class="link-list">
-						<li><a class="waves-effect waves-dark" href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
-						<li><a class="waves-effect waves-dark" href="#">Pellentesque et pulvinar enim. Quisque at tempor ligula</a></li>
-						<li><a class="waves-effect waves-dark" href="#">Natus error sit voluptatem accusantium doloremque</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-sm-3 col-lg-3">
-				<div class="widget">
-					<h5 class="widgetheading">Artigos recentes</h5>
-					<ul class="link-list">
-						<li><a class="waves-effect waves-dark" href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
-						<li><a class="waves-effect waves-dark" href="#">Pellentesque et pulvinar enim. Quisque at tempor ligula</a></li>
-						<li><a class="waves-effect waves-dark" href="#">Natus error sit voluptatem accusantium doloremque</a></li>
-					</ul>
-				</div>
-			</div>
-		</div-->
-	</div>
-	<div id="sub-footer">
 		<div class="container">
+		
 			<div class="row">
-				<div class="col-lg-6">
-					<div class="copyright">
+				<div class="col-sm-3 col-lg-3">
+					<div class="widget">
+						<h5 class="widgetheading">Contato</h5>
+						<address>
+						<strong>Sociedade Brasileira de Ciência e Tecnologia de Alimentos SBCTA-PR</strong><br>
+						<!--JC Main Road, Near Silnile tower<br-->
+						 Curitiba-PR, Brasil</address>
 						<p>
-							<span>&copy; Bootstrap Template 2018 All right reserved. <a href="https://webthemez.com/free-bootstrap-templates/" target="_blank">Bootstrap Templates</a> By WebThemez
+							<!--i class="icon-phone"></i> (123) 456-789 - 1255-12584 <br-->
+							<i class="icon-envelope-alt"></i> revistaagroindustrial@gmail.com
 						</p>
 					</div>
 				</div>
-				<div class="col-lg-6">
-					<ul class="social-network">
-						<li><a class="waves-effect waves-dark" href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-						<li><a class="waves-effect waves-dark" href="#" data-placement="top" title="Instagram"><i class="fa fa-instagram"></i></a></li>
-						<!--li><a class="waves-effect waves-dark" href="#" data-placement="top" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-						<li><a class="waves-effect waves-dark" href="#" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
-						<li><a class="waves-effect waves-dark" href="#" data-placement="top" title="Google plus"><i class="fa fa-google-plus"></i></a></li-->
-					</ul>
+				<div class="col-sm-3 col-lg-3">
+					<div class="widget">
+						<h5 class="widgetheading">Links</h5>
+						<ul class="link-list">
+							<li><a class="waves-effect waves-dark" href="https://revistaagroindustrial.github.io/agroindustrial.github.io/pricing.html">Próximos eventos</a></li>
+							<li><a class="waves-effect waves-dark" href="#">Termos e condições</a></li>
+							<li><a class="waves-effect waves-dark" href="#">Política e privacidade</a></li>
+							<li><a class="waves-effect waves-dark" href="https://sbcta-pr.org.br/">SBCTA-PR</a></li>
+							<!--li><a class="waves-effect waves-dark" href="#">Contact us</a></li-->
+						</ul>
+					</div>
+				</div>
+				<!--div class="col-sm-3 col-lg-3">
+					<div class="widget">
+						<h5 class="widgetheading">Latest posts</h5>
+						<ul class="link-list">
+							<li><a class="waves-effect waves-dark" href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+							<li><a class="waves-effect waves-dark" href="#">Pellentesque et pulvinar enim. Quisque at tempor ligula</a></li>
+							<li><a class="waves-effect waves-dark" href="#">Natus error sit voluptatem accusantium doloremque</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-sm-3 col-lg-3">
+						<div class="widget">
+						<h5 class="widgetheading">Artigos recentes</h5>
+						<ul class="link-list">
+							<li><a class="waves-effect waves-dark" href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+							<li><a class="waves-effect waves-dark" href="#">Pellentesque et pulvinar enim. Quisque at tempor ligula</a></li>
+							<li><a class="waves-effect waves-dark" href="#">Natus error sit voluptatem accusantium doloremque</a></li>
+						</ul>
+					</div>
+				</div>
+			</div-->
+		</div>
+		<div id="sub-footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="copyright">
+							<p>
+								<span>&copy; Bootstrap Template 2018 All right reserved. <a href="https://webthemez.com/free-bootstrap-templates/" target="_blank">Bootstrap Templates</a> By WebThemez
+							</p>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<ul class="social-network">
+							<li><a class="waves-effect waves-dark" href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+							<li><a class="waves-effect waves-dark" href="#" data-placement="top" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+							<!--li><a class="waves-effect waves-dark" href="#" data-placement="top" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+							<li><a class="waves-effect waves-dark" href="#" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+							<li><a class="waves-effect waves-dark" href="#" data-placement="top" title="Google plus"><i class="fa fa-google-plus"></i></a></li-->
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 	</footer>
 </div>
 <a href="#" class="scrollup waves-effect waves-dark"><i class="fa fa-angle-up active"></i></a>
@@ -327,5 +442,6 @@
 <script src="js/jquery.magnific-popup.min.js"></script>
 <script src="js/animate.js"></script> 
 <script src="js/custom.js"></script>
+
 </body>
 </html>
