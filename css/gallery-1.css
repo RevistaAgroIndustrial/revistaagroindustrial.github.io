@@ -142,7 +142,7 @@
 .filter li:before {
     display: inline-block;
     content: "/";
-    padding: 0 25px 0 19px;
+    padding: 0 5px 0 5px;
     color: rgba(0,0,0,0.20);
 }
 .filter li:first-child:before {
