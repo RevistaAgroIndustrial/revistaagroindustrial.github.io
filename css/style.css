@@ -232,10 +232,10 @@ header  .navbar-nav > li > a {
 .dishes{
 	
 	background: #de8c63;
-		
 	padding: 5px 0;
 	position: relative;	
 	color: #1b1b1b;
+	z-index: 2; 
 }
 .dropdown-menu li a:hover {
     color: #fff !important;
@@ -377,6 +377,7 @@ ul.nav li.dropdown a {
 	position:relative;
 	margin:0;
 	padding:0;
+	z-index: 1;
 }
 
 /*  Sliders
