@@ -1,1 +1,0 @@
-# agroIndustrial.github.io
