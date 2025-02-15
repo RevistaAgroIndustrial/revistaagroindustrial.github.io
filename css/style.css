@@ -1710,6 +1710,7 @@ margin-top: 15px;
 		float: none;
 		width: 100%;
 		background: #391300;
+		justify-content: center;
 	}
 .navbar .nav > .active > a, .navbar .nav > .active > a:hover {background: none;font-weight: 700;color: #f8513e;}
 	header .navbar-nav > li {

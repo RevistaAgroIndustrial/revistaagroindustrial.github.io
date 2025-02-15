@@ -44,8 +44,9 @@
     left: 0;
     opacity: 0;
     filter: alpha(opacity=0);
-    -webkit-transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;  
     transition: all 0.2s ease;
+    pointer-events: none;
 }
 
 .gallery-item:hover .gallery-thumb .image-overlay {
@@ -129,7 +130,7 @@
 
 /* Gallery Filter
  * -------------------------- */
-.filter {
+ .filter {
     list-style: none;
     padding: 0;
     margin: 0 0 60px 0;
@@ -140,25 +141,29 @@
     margin: 0;
 }
 .filter li:before {
-    display: inline-block;
     content: "/";
-    padding: 0 5px 0 5px;
+    padding: 0 5px;
     color: rgba(0,0,0,0.20);
+    pointer-events: none;
 }
 .filter li:first-child:before {
     display: none;
 }
 .filter li a {
+    display: inline-block;
     text-transform: uppercase;
     font-weight: 700;
     font-size: 14px;
     color: #2c3e50;
+    padding: 10px 15px;
+    cursor: pointer;
 }
 .filter li a:hover,
 .filter li a:focus,
 .filter li a.active {
     color: #8bc34a;
     text-decoration: none;
+    border-bottom: 2px solid #8bc34a;
 }
 
 /* Isotope Animating
