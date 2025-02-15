@@ -1,6 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
     loadHTML("header-container", "include/header.html");
     loadHTML("footer-container", "include/footer.html");
+    if (window.location.pathname.includes("edicoesanteriores.html")) {
+        console.log("You are on the 'edicoesanteriores.html' page!");
+        loadHTML("edicoes-container", "include/link-edicoes.html")
+    } else {
+        console.log(window.location.pathname);
+    }
 });
 
 function loadHTML(id, file) {
