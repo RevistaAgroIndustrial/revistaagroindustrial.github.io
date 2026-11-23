@@ -3,7 +3,7 @@ Author URI: http://webthemez.com/
 Note: Licence under Creative Commons Attribution 3.0  
 -------------------------------------------------------*/
 
-@import url('http://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Open+Sans:400,600,700'); 
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Open+Sans:400,600,700'); 
 @import url('font-awesome.css');  
 @import url('animate.css');
 
@@ -167,7 +167,7 @@ header .navbar-collapse  ul.navbar-nav {
     float: right;
     margin-right: 0;
 }
-header .navbar {min-height: 70px;padding: 18px 0;background: #1C352A;}
+header .navbar {min-height: 70px;padding: 18px 0;background: #421702;}
 .home-page header .navbar-default{
     background: transparent;
     position: absolute;
@@ -231,7 +231,7 @@ header  .navbar-nav > li > a {
 
 .dishes{
 	
-	background: #F2F2ED;
+	background: #de8c63;
 	padding: 5px 0;
 	position: relative;	
 	color: #1b1b1b;
@@ -1709,7 +1709,7 @@ margin-top: 15px;
 		border-top: none;
 		float: none;
 		width: 100%;
-		background: #1C352A;
+		background: #391300;
 		justify-content: center;
 	}
 .navbar .nav > .active > a, .navbar .nav > .active > a:hover {background: none;font-weight: 700;color: #f8513e;}

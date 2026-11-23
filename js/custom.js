@@ -119,58 +119,26 @@ jQuery(document).ready(function($) {
         sync                : "",                //{NEW} Selector: Mirror the actions performed on this slider with another slider. Use with care.
         asNavFor            : "",                //{NEW} Selector: Internal property exposed for turning the slider into a thumbnail navigation for another slider
     });
-	/* -------- Isotope Filtering -------- */
-		var $container = $('#isotope-gallery-container');
-		var $filter = $('.filter');
-		$(window).load(function () {
-		// Initialize Isotope
-		$container.isotope({
-			itemSelector: '.gallery-item-wrapper'
-		});
-		$('.filter a').click(function () {
-			var selector = $(this).attr('data-filter');
-			$container.isotope({ filter: selector });
-			return false;
-		});
-		$filter.find('a').click(function () {
-			var selector = $(this).attr('data-filter');
-			$filter.find('a').parent().removeClass('active');
-			$(this).parent().addClass('active');
-		});
-		});
-		$(window).smartresize(function () {
-		$container.isotope('reLayout');
-		});
-		// End Isotope Filtering
-		// $('.gallery-zoom').magnificPopup({ 
-		// 		type: 'image',
-		// 		tError: '',
-		// 		// other options
-		// 	});
-			 
-		// Open PDF as an image Zoom
-		$('.gallery-zoom').on('click', function (e) {
-			e.preventDefault();
-			var pdfSrc = $(this).attr('href');
-			var fileType = $(this).attr('data-type');
 
-			// Set the src attribute of the iframe and show the overlay
-			var iframe = $('.pdf-iframe');
-			iframe.attr('src', pdfSrc);
+	/* -------- Abrir PDF em janela sobreposta -------- */
+	var $pdfOverlay = $('.pdf-overlay');
+	var $pdfIframe  = $('.pdf-iframe');
 
-			var overlay = $('.pdf-overlay');
-			overlay.show();
+	$('.gallery-zoom').on('click', function (e) {
+		e.preventDefault();
+		$pdfIframe.attr('src', $(this).attr('href'));
+		$pdfOverlay.show();
+	});
 
-			// Close the overlay when clicking outside of the iframe or on the overlay itself
-			overlay.click(function () {
-				iframe.attr('src', ''); // Clear the src attribute to stop PDF loading
-				overlay.hide();
-			});
+	// Fecha ao clicar fora da janela do PDF
+	$pdfOverlay.on('click', function () {
+		$pdfIframe.attr('src', '');
+		$pdfOverlay.hide();
+	});
 
-			// Prevent the overlay from closing when clicking inside the iframe
-			$('.pdf-container').click(function (e) {
-				e.stopPropagation();
-			});	
-		});	
+	// Não fecha ao clicar dentro da janela do PDF
+	$('.pdf-container').on('click', function (e) {
+		e.stopPropagation();
+	});
 });
 
